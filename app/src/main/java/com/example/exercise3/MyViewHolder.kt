@@ -14,6 +14,7 @@ class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.recyclerViewText.text = item.description
         val rnd = Random()
         val color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
+        item.setCustomColor(color)
         itemView.recyclerViewImage.setBackgroundColor(color)
         itemView.setOnClickListener{
             listener?.onItemClicked(item)

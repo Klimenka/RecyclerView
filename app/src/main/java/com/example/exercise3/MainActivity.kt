@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MyItemListener {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recyclerview)
@@ -18,16 +18,10 @@ class MainActivity : AppCompatActivity(), MyItemListener {
         recyclerview.layoutManager = LinearLayoutManager(this)
         recyclerview.adapter = MyAdapter(this, content, object: MyItemListener{
             override fun onItemClicked(item: MyItem){
-                intent.putExtra("MyItem", item.toString())
+                intent.putExtra("MyItem", item)
                 startActivity(intent)
             }
         })
 
-    }
-
-    override fun onItemClicked(item: MyItem) {
-        val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra("MyItem", item.toString())
-        startActivity(intent)
     }
 }
