@@ -1,0 +1,36 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp">
+
+
+    <ImageView
+        android:id="@+id/recyclerViewImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#FF00FF"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/recyclerViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@id/recyclerViewImage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/recyclerViewText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="tools:text can be used to have a preview in the editor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/recyclerViewImage"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewTitle"
+        android:layout_margin="5dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
